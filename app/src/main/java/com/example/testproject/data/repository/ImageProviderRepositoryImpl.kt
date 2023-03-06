@@ -1,15 +1,16 @@
 package com.example.testproject.data.repository
 
 import com.example.testproject.data.model.ImageData
-import com.example.testproject.data.remote.ImageFetchingAPI
+import com.example.testproject.data.remote.ImageAPI
 import com.example.testproject.data.util.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class ImageProviderRepositoryImpl(
-    private val api: ImageFetchingAPI,
+class ImageProviderRepositoryImpl @Inject constructor(
+    private val api: ImageAPI,
 ): ImageProviderRepository {
 
     override fun fetchImageData(): Flow<Resource<List<ImageData>>> = flow {

@@ -1,9 +1,10 @@
-package com.example.testproject
+package com.example.testproject.ui.image_list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.testproject.R
 
-class MainActivity : AppCompatActivity() {
+class ImageListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -1,7 +1,7 @@
 package com.example.testproject.di
 
-import com.example.testproject.data.repository.ImageProviderRepository
-import com.example.testproject.data.repository.ImageProviderRepositoryImpl
+import com.example.testproject.data.repository.ImageRepository
+import com.example.testproject.data.repository.ImageRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,7 +16,7 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindImageProviderRepository(
-        imageProviderRepositoryImpl: ImageProviderRepositoryImpl
-    ): ImageProviderRepository
+        imageProviderRepositoryImpl: ImageRepositoryImpl
+    ): ImageRepository
 
 }

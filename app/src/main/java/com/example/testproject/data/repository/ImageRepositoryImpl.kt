@@ -9,11 +9,11 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class ImageProviderRepositoryImpl @Inject constructor(
+class ImageRepositoryImpl @Inject constructor(
     private val api: ImageAPI,
-): ImageProviderRepository {
+): ImageRepository {
 
-    override fun fetchImageData(): Flow<Resource<List<ImageData>>> = flow {
+    override fun fetchImageDataList(): Flow<Resource<List<ImageData>>> = flow {
         emit(Resource.Loading())
 
         try {

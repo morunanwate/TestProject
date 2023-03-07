@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.testproject.ui.image_list.ImageListViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.example.testproject.ui.image_list.ImageDataAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.image_list.ImageListActivity"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setAdapter="@{adapter}"
+            app:submitList="@{viewModel.imageList.data}"
+            tools:listitem="@layout/image_list_item" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_movies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:manageState="@{viewModel.showProgressBar}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

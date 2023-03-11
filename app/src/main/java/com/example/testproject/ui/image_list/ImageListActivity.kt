@@ -2,7 +2,6 @@ package com.example.testproject.ui.image_list
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -33,7 +32,6 @@ class ImageListActivity : AppCompatActivity() {
 
         imageListViewModel.uiEvent.observe(this) { uiEvent ->
             if (uiEvent is UIEvent.ImageClicked) {
-                Toast.makeText(this@ImageListActivity, "Clicked", Toast.LENGTH_LONG).show()
                 val intent = Intent(this@ImageListActivity, ImageDetailActivity::class.java)
                 intent.putExtra(IntentKeyConstants.IMAGE_DETAIL_IMAGE_DATA_KAY, uiEvent.imageData)
                 startActivity(intent)
